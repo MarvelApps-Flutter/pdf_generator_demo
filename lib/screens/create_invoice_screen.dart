@@ -156,6 +156,14 @@ class _CreateInvoiceScreenState extends State<CreateInvoiceScreen>
     return AppBar(
       backgroundColor: Colors.white,
       elevation: 0.0,
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(Icons.arrow_back_ios),
+        iconSize: 24,
+        color: Colors.black,
+      ),
       title: const Center(
         child: Text(
           "Create Invoice",
@@ -165,14 +173,18 @@ class _CreateInvoiceScreenState extends State<CreateInvoiceScreen>
       actions: [
         IconButton(
           padding: const EdgeInsets.only(right: 15),
-          onPressed:imageFile != null? () {
+          onPressed:
+          //imageFile != null? () 
+          (){
+            
             if (formGlobalKey.currentState!.validate()) {
               compName = companyNameController.text.toString().trim();
               compGstin = companyGstinController.text.toString().trim();
               compEmail = companyEmailController.text.toString().trim();
               compAddress = companyAddressController.text.toString().trim();
               compWebsite = companyWebsiteController.text.toString().trim();
-              imgPath = imageFile!.path;
+              imgPath = "";
+              //imageFile!.path;
               invDate = invoiceDateController.text.toString().trim();
               invNum = invoiceNumberController.text.toString().trim();
               cliName = clientNameController.text.toString().trim();
@@ -186,7 +198,7 @@ class _CreateInvoiceScreenState extends State<CreateInvoiceScreen>
                   compEmail!.length != 0 &&
                   compAddress!.length != 0 &&
                   compWebsite!.length != 0 &&
-                  imgPath!.length != 0 &&
+                 // imgPath!.length != 0 &&
                   invDate!.length != 0 &&
                   invNum!.length != 0 &&
                   cliName!.length != 0 &&
@@ -201,7 +213,8 @@ class _CreateInvoiceScreenState extends State<CreateInvoiceScreen>
                   companyEmail: compEmail,
                   companyAddress: compAddress,
                   companyWebsite: compWebsite,
-                  imagePath: imageFile!.path,
+                  imagePath: "",
+                  //imageFile!.path,
                   invoiceDate: invDate,
                   invoiceNumber: invNum,
                   clientName: cliName,
@@ -212,6 +225,7 @@ class _CreateInvoiceScreenState extends State<CreateInvoiceScreen>
                   itemList: itemsList,
                   termsAndCon: termAndCon,
                 );
+                print("save called");
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -219,7 +233,8 @@ class _CreateInvoiceScreenState extends State<CreateInvoiceScreen>
                             InvoiceBuilder(model).buildInvoice()));
               }
             }
-          }:(){},
+          },
+          //:(){},
           icon: const Icon(Icons.save),
           iconSize: 24,
           color: imageFile != null?Colors.black: Colors.grey,

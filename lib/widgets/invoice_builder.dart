@@ -176,12 +176,12 @@ class InvoiceBuilder {
                 decoration: pdf.BoxDecoration(
                   shape: pdf.BoxShape.circle,
                   color: PdfColors.white,
-                  image: pdf.DecorationImage(
-                    fit: pdf.BoxFit.fill,
-                    image:
-                        pdf.MemoryImage(
-                            File(invoice.imagePath!).readAsBytesSync()),
-                  ),
+                  // image: pdf.DecorationImage(
+                  //   fit: pdf.BoxFit.fill,
+                  //   image:
+                  //       pdf.MemoryImage(
+                  //           File(invoice.imagePath!).readAsBytesSync()),
+                  // ),
                 ),
 
             )

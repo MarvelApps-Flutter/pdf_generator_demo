@@ -46,6 +46,8 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
 
   AppBar buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
+      leading: Icon(Icons.arrow_back_ios,color: Colors.black,),
       backgroundColor: Colors.white,
       elevation: 0.0,
       title: const Center(

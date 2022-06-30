@@ -40,15 +40,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            buildTopHeader(),
-            const SizedBox(height: 15,),
-            buildLandingList(),
-            buildCreateNewInvoiceButton(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              buildTopHeader(),
+              const SizedBox(height: 15,),
+              buildLandingList(),
+              buildCreateNewInvoiceButton(),
+            ],
+          ),
         ),
       ),
     );
@@ -85,8 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(10),
         textStyle: AppTextStyles.regularForWhiteSmallTextStyle,),
       label: const Icon(Icons.arrow_forward, size: 16),
-      onPressed: () => {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateInvoiceScreen()))
+      onPressed: () {
+        print("on pressed");
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateInvoiceScreen()));
       },
     );
   }
