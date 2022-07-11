@@ -2,6 +2,9 @@
 
 A new Flutter app for demonstrating how to generate Pdf.
 
+# Demo
+<img src="https://github.com/MarvelApps-Flutter/pdf_generator_demo/blob/master/screenshots/gif/demo.gif" height="480px"></td>
+
 # Android Screenshots
 
 <table>
